@@ -1,4 +1,3 @@
-const exercisesEN = require('./exercises-en.json');
 const exercisesES = require('./exercises-es.json');
 
 module.exports = (req, res) => {
@@ -11,7 +10,5 @@ module.exports = (req, res) => {
         return;
     }
 
-    const lang = req.query.lang === 'es' ? 'es' : 'en';
-    const responseData = lang === 'es' ? exercisesES : exercisesEN;
-    res.status(200).json(responseData);
+    res.status(200).json(exercisesES);
 };
